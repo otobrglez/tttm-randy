@@ -1,0 +1,5 @@
+services:
+  tttm_randy:
+    image: ghcr.io/otobrglez/tttm-randy:latest
+    ports:
+      - "0.0.0.0:5001:5000"

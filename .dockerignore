@@ -1,0 +1,6 @@
+.devenv
+.direnv
+.idea
+.venv
+.envrc
+.gitignore
