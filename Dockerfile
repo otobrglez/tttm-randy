@@ -1,4 +1,10 @@
 FROM python:3.11-slim
+
+LABEL "maintainer"="Oto Brglez <otobrglez@gmail.com>"
+LABEL "org.opencontainers.image.url"="https://github.com/otobrglez/tttm-randy"
+LABEL "org.opencontainers.image.source"="https://github.com/otobrglez/tttm-randy"
+LABEL description="This is a sample tic-tac-toe player server for tttm challenge"
+
 WORKDIR /tttm-randy
 
 COPY tttm-randy.py /tttm-randy
