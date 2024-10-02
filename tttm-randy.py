@@ -12,14 +12,17 @@ class Game:
 
     @staticmethod
     def from_args(args):
-        def parse_moves(raw):
+        def parse_moves(raw) -> list[tuple[str, tuple[int, int]]]:
+            if raw is None or raw == "":
+                return []
+
             return [(symbol, (int(x), int(y))) for symbol, x, y in
-                    [x.split("-") for x in raw.split("_")]]
+                    [x.split("-") for x in raw.split("_", maxsplit=3)]]
 
         return Game(
             args.get("gid", type=str),
             args.get("playing", default="X", type=str),
-            parse_moves(args.get("moves", type=str)),
+            parse_moves(args.get("moves", type=str, default="")),
             args.get("size", default=3, type=int)
         )
 
