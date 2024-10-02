@@ -4,6 +4,8 @@
 
 The server uses Python 3, Flask and random strategy.
 
+`tttm-randy` is available at [http://tttm-randy.ogrodje.si (example move)](http://tttm-randy.ogrodje.si/move?gid=b3409c8d-8002-45f0-9021-f5f267bc574e&moves=X-1-1_O-0-0&playing=X).
+
 ## Docker
 
 ```bash
