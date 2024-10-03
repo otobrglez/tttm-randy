@@ -4,6 +4,9 @@ import random
 
 
 class Game:
+    move_separator = "_"
+    position_separator = "-"
+
     def __init__(self, gid, playing, moves, size):
         self.gid = gid
         self.playing = playing
@@ -15,8 +18,8 @@ class Game:
             return []
 
         return [(symbol, (int(x), int(y))) for symbol, x, y in
-                [x.split("-", maxsplit=3) for x in
-                 raw.split("_", maxsplit=size * size)]]
+                [x.split(Game.position_separator, maxsplit=3) for x in
+                 raw.split(Game.move_separator, maxsplit=size * size)]]
 
     @staticmethod
     def from_args(args):
@@ -36,7 +39,7 @@ class Game:
                 for y in range(self.size)]
 
     def render_move(self, m) -> str:
-        return f"Move:{self.playing}-{m[0]}-{m[1]}"
+        return f"Move:{self.playing}{Game.position_separator}{m[0]}{Game.position_separator}{m[1]}"
 
     def suggested_move(self) -> str:
         possible_moves = [position for (symbol, position) in self.grid() if
